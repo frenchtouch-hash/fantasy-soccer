@@ -1,0 +1,194 @@
+[
+  {
+    "url": "https://cdn.cookielaw.org/consent/996debe1-708b-4ebc-95c8-5b7ee0d77d76/996debe1-708b-4ebc-95c8-5b7ee0d77d76.json",
+    "status": 200,
+    "type": "xhr",
+    "contentType": "application/json"
+  },
+  {
+    "url": "https://o151969.ingest.sentry.io/api/6160897/envelope/?sentry_version=7&sentry_key=8e2fa71bc4354a02b2a80d418f24f274&sentry_client=sentry.javascript.react%2F9.2.0",
+    "status": 200,
+    "type": "fetch",
+    "contentType": "application/json"
+  },
+  {
+    "url": "https://play.fifa.com/nys4gJAQSGma8YBNAc3-1Ict/h1iE2NDbw1cXfD/aVNaAQ/TDMkL/HJpKxsB",
+    "status": 201,
+    "type": "xhr",
+    "contentType": "application/json"
+  },
+  {
+    "url": "https://cdn.cookielaw.org/consent/996debe1-708b-4ebc-95c8-5b7ee0d77d76/0196ee40-8cf7-7552-ae8a-ccec3d4d90c8/en.json",
+    "status": 200,
+    "type": "fetch",
+    "contentType": "application/json"
+  },
+  {
+    "url": "https://cdn.cookielaw.org/scripttemplates/202603.1.0/assets/otFlat.json",
+    "status": 200,
+    "type": "fetch",
+    "contentType": "application/json"
+  },
+  {
+    "url": "https://cdn.cookielaw.org/scripttemplates/202603.1.0/assets/v2/otPcTab.json",
+    "status": 200,
+    "type": "fetch",
+    "contentType": "application/json"
+  },
+  {
+    "url": "https://cdn.cookielaw.org/scripttemplates/202603.1.0/assets/otCommonStyles.css",
+    "status": 200,
+    "type": "fetch",
+    "contentType": "text/css"
+  },
+  {
+    "url": "https://play.fifa.com/json/langs/global/en.json",
+    "status": 200,
+    "type": "fetch",
+    "contentType": "application/json"
+  },
+  {
+    "url": "https://play.fifa.com/json/langs/fantasy/en.json",
+    "status": 200,
+    "type": "fetch",
+    "contentType": "application/json"
+  },
+  {
+    "url": "https://cdn.cookielaw.org/logos/static/ot_guard_logo.svg",
+    "status": 200,
+    "type": "fetch",
+    "contentType": "image/svg+xml"
+  },
+  {
+    "url": "https://play.fifa.com/json/gamezone/header_management/en.json",
+    "status": 200,
+    "type": "xhr",
+    "contentType": "application/json"
+  },
+  {
+    "url": "https://play.fifa.com/json/gamezone/theme_palette/en.json",
+    "status": 200,
+    "type": "xhr",
+    "contentType": "application/json"
+  },
+  {
+    "url": "https://ad.doubleclick.net/ccm/s/collect?auid=336062840.1781281652&gtm=45be66b0h2v9236118628za200zd9236118628xec",
+    "status": 204,
+    "type": "fetch",
+    "contentType": ""
+  },
+  {
+    "url": "https://www.google.com/rmkt/collect/17578151662/?random=1781284085595&cv=11&fst=1781284085595&fmt=8&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45be66b0h2v9236118628za200zd9236118628xec&gcd=13l3l3l3l1l1&dma=0&tag_exp=115938466~115938468~117776793~119456239~119456247&u_w=1440&u_h=1100&url=https%3A%2F%2Fplay.fifa.com%2Ffantasy%2Fteam&rcb=12&frm=0&tiba=FIFA%20World%20Cup%E2%84%A2%20Fantasy&hn=www.googleadservices.com&npa=0&pscdl=noapi&auid=336062840.1781281652&uaa=x86&uab=64&uafvl=Google%2520Chrome%3B149.0.7827.114%7CChromium%3B149.0.7827.114%7CNot)A%253BBrand%3B24.0.0.0&uamb=0&uam=&uap=Windows&uapv=19.0.0&uaw=0&data=event%3Dgtag.config&ept=68&gcp=5",
+    "status": 200,
+    "type": "fetch",
+    "contentType": ""
+  },
+  {
+    "url": "https://www.google.com/rmkt/collect/10857500019/?random=1781284085645&cv=11&fst=1781284085645&fmt=8&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45be66b0h2v9236118628za200zd9236118628xec&gcd=13l3l3l3l1l1&dma=0&tag_exp=115938466~115938468~117776793~119456239~119456247&u_w=1440&u_h=1100&url=https%3A%2F%2Fplay.fifa.com%2Ffantasy%2Fteam&rcb=12&frm=0&tiba=FIFA%20World%20Cup%E2%84%A2%20Fantasy&hn=www.googleadservices.com&npa=0&pscdl=noapi&auid=336062840.1781281652&uaa=x86&uab=64&uafvl=Google%2520Chrome%3B149.0.7827.114%7CChromium%3B149.0.7827.114%7CNot)A%253BBrand%3B24.0.0.0&uamb=0&uam=&uap=Windows&uapv=19.0.0&uaw=0&data=event%3Dgtag.config&ept=68&gcp=5",
+    "status": 200,
+    "type": "fetch",
+    "contentType": ""
+  },
+  {
+    "url": "https://www.google.com/ccm/collect?rcb=12&frm=0&auid=336062840.1781281652&dt=FIFA%20World%20Cup%E2%84%A2%20Fantasy&en=page_view&dl=https%3A%2F%2Fplay.fifa.com%2Ffantasy%2Fteam&scrsrc=www.googletagmanager.com&rnd=155705097.1781284086&navt=n&npa=0&gtm=45be66b0h2v9236118628za200zd9236118628xec&gcd=13l3l3l3l1l1&dma=0&tag_exp=115938466~115938468~117776793~119456239~119456247&apve=1&apvf=f&apvc=1&tids=AW-17578151662~AW-10857500019&tid=AW-17578151662&tft=1781284085681&tfd=1473",
+    "status": 200,
+    "type": "fetch",
+    "contentType": ""
+  },
+  {
+    "url": "https://play.fifa.com/api/en/user",
+    "status": 200,
+    "type": "xhr",
+    "contentType": "application/json"
+  },
+  {
+    "url": "https://play.fifa.com/json/fantasy/rounds.json",
+    "status": 200,
+    "type": "xhr",
+    "contentType": "application/json"
+  },
+  {
+    "url": "https://www.google.com/ccm/collect?rcb=3&frm=0&auid=336062840.1781281652&dt=FIFA%20World%20Cup%E2%84%A2%20Fantasy&en=page_view&dl=https%3A%2F%2Fplay.fifa.com%2Ffantasy%2Fteam&scrsrc=www.googletagmanager.com&rnd=155705097.1781284086&navt=n&npa=0&gtm=45fe66b0h2v9190632181za200zb9236118628zd9236118628xec&gcd=13l3l3l3l1l1&dma=0&tag_exp=115938466~115938469~119456239~119456247&apve=1&apvf=f&apvc=0&tids=DC-11608620&tid=DC-11608620&tft=1781284086077&tfd=1869",
+    "status": 200,
+    "type": "fetch",
+    "contentType": ""
+  },
+  {
+    "url": "https://play.fifa.com/json/fantasy/squads.json",
+    "status": 200,
+    "type": "xhr",
+    "contentType": "application/json"
+  },
+  {
+    "url": "https://play.fifa.com/json/fantasy/players.json",
+    "status": 200,
+    "type": "xhr",
+    "contentType": "application/json"
+  },
+  {
+    "url": "https://play.fifa.com/api/en/prompt?game=fantasy",
+    "status": 200,
+    "type": "xhr",
+    "contentType": "application/json"
+  },
+  {
+    "url": "https://play.fifa.com/nys4gJAQSGma8YBNAc3-1Ict/h1iE2NDbw1cXfD/aVNaAQ/TDMkL/HJpKxsB",
+    "status": 201,
+    "type": "xhr",
+    "contentType": "application/json"
+  },
+  {
+    "url": "https://play.fifa.com/api/en/fantasy/team",
+    "status": 200,
+    "type": "xhr",
+    "contentType": "application/json"
+  },
+  {
+    "url": "https://play.fifa.com/api/en/fantasy/team/history/1",
+    "status": 200,
+    "type": "xhr",
+    "contentType": "application/json"
+  },
+  {
+    "url": "https://play.fifa.com/json/poc.json",
+    "status": 200,
+    "type": "xhr",
+    "contentType": "application/json"
+  },
+  {
+    "url": "https://api.fifa.com/api/geo/esigeo.json",
+    "status": 200,
+    "type": "xhr",
+    "contentType": "application/json"
+  },
+  {
+    "url": "https://play.fifa.com/json/fantasy/message_banner.json",
+    "status": 200,
+    "type": "xhr",
+    "contentType": "application/json"
+  },
+  {
+    "url": "https://play.fifa.com/api/en/fantasy/gamebar?roundId=1",
+    "status": 200,
+    "type": "xhr",
+    "contentType": "application/json"
+  },
+  {
+    "url": "https://ad.doubleclick.net/activity;src=11608620;type=entir0;cat=dept_0;rcb=3;ord=3ljc7m85m95bbjfa5ff11781281652611;npa=0;auiddc=336062840.1781281652;u1=%2Ffantasy%2Fteam;u2=play%3Aworldcup%3Acanadamexicousa2026%3Agames%3Afantasy-classic%3Ateam;u3=en;u9=null;uaa=x86;uab=64;uafvl=Google%2520Chrome%3B149.0.7827.114%7CChromium%3B149.0.7827.114%7CNot)A%253BBrand%3B24.0.0.0;uamb=0;uam=;uap=Windows;uapv=19.0.0;uaw=0;pscdl=noapi;frm=0;_tu=IAAB;gtm=45fe66b0h2v9190632181za200zb9236118628zd9236118628xec;gcd=13l3l3l3l1l1;dma=0;dc_fmt=3;tag_exp=115938466~115938469~119456239~119456247;epver=2;dc_random=1781284088__PuFVQBKPtRcRqSioOBIAfsab0aTMQthJw;~oref=https%3A%2F%2Fplay.fifa.com%2Ffantasy%2Fteam?",
+    "status": 302,
+    "type": "fetch",
+    "contentType": "text/html; charset=UTF-8"
+  },
+  {
+    "url": "https://ad.doubleclick.net/activity;dc_pre=CLqIwqqYgpUDFYEIiAkdMfIVnQ;src=11608620;type=entir0;cat=dept_0;rcb=3;ord=3ljc7m85m95bbjfa5ff11781281652611;npa=0;auiddc=336062840.1781281652;u1=%2Ffantasy%2Fteam;u2=play%3Aworldcup%3Acanadamexicousa2026%3Agames%3Afantasy-classic%3Ateam;u3=en;u9=null;uaa=x86;uab=64;uafvl=Google%2520Chrome%3B149.0.7827.114%7CChromium%3B149.0.7827.114%7CNot)A%253BBrand%3B24.0.0.0;uamb=0;uam=;uap=Windows;uapv=19.0.0;uaw=0;pscdl=noapi;frm=0;_tu=IAAB;gtm=45fe66b0h2v9190632181za200zb9236118628zd9236118628xec;gcd=13l3l3l3l1l1;dma=0;dc_fmt=3;tag_exp=115938466~115938469~119456239~119456247;epver=2;dc_random=1781284088__PuFVQBKPtRcRqSioOBIAfsab0aTMQthJw;~oref=https%3A%2F%2Fplay.fifa.com%2Ffantasy%2Fteam?",
+    "status": 302,
+    "type": "fetch",
+    "contentType": "text/html; charset=UTF-8"
+  },
+  {
+    "url": "https://www.google.com/gmp/conversion/_dc_unique_id=6358703674554641296;_dc_ptd=ChEI8Nyu0QYQ9ZKLoIG_guOHARIfAC3uXlR2EpwkGlkJVeD6Knoc_LKQHR_8oHp_7T-ieA;_dc_time=1781284088;cid=CAQS4gEAEQoqgUtZRCmdkjGfE8l91rLkkkuvooo7ZK-Zic81aeP_ZKJc3FHR3H2Ukk-Rw_Wu4vspwJcD5f9-i84vL2ZOIP80fe6X7wAIQZ0DnC8UaX7t8e5e6g48OHJuQIvhgpEVHywHxtQfSnbwWr34LO35fa-E_GDPgNxEwHJMAmEfbDecTt3Quqa3mrk0SX0ePCFiRiyhXxXcZ6w7aANcXFCCJb8ezOhMupYxWO0HyuafLL5EWrUOFYvkqpcs-2TtN0u0cp2Vm7iCFqzBpbC2Rx1GgY2MYePkPXbIhKq7pibWPQh4;eps=AHas8cDEbhIANXKaTracrrzKyPnDGyKS6YacGJimqVJ0OPqoV_4mElGT9cCR7WKpIeeGIcWhW8oRigVhRAjUWGpwbnfAes6p1LjsxhUK_8YTBiLcXQ;dc_pre=CLqIwqqYgpUDFYEIiAkdMfIVnQ;src=11608620;type=entir0;cat=dept_0;rcb=3;ord=3ljc7m85m95bbjfa5ff11781281652611;npa=0;auiddc=336062840.1781281652;u1=%2Ffantasy%2Fteam;u2=play%3Aworldcup%3Acanadamexicousa2026%3Agames%3Afantasy-classic%3Ateam;u3=en;u9=null;uaa=x86;uab=64;uafvl=Google%2520Chrome%3B149.0.7827.114%7CChromium%3B149.0.7827.114%7CNot)A%253BBrand%3B24.0.0.0;uamb=0;uam=;uap=Windows;uapv=19.0.0;uaw=0;pscdl=noapi;frm=0;_tu=IAAB;gtm=45fe66b0h2v9190632181za200zb9236118628zd9236118628xec;gcd=13l3l3l3l1l1;dma=0;dc_fmt=3;tag_exp=115938466~115938469~119456239~119456247;epver=2;dc_random=1781284088__PuFVQBKPtRcRqSioOBIAfsab0aTMQthJw;~oref=https%3A%2F%2Fplay.fifa.com%2Ffantasy%2Fteam?",
+    "status": 200,
+    "type": "fetch",
+    "contentType": "image/gif"
+  }
+]

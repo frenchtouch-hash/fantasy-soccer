@@ -1,0 +1,165 @@
+{
+  "round": 1,
+  "updatedAt": "2026-06-12T17:14:57.829Z",
+  "teamName": "frenchtouch",
+  "totalPoints": 18,
+  "notes": "Auto-synced from play.fifa.com/fantasy/team with FIFA player ids, public player metadata, and effective captain points.",
+  "lineup": [
+    {
+      "name": "Mike Maignan",
+      "position": "G",
+      "status": "yet_to_play",
+      "points": null,
+      "captain": false,
+      "viceCaptain": false,
+      "fifaPlayerId": 506,
+      "rawPoints": null
+    },
+    {
+      "name": "Pervis Estupiñán",
+      "position": "D",
+      "status": "yet_to_play",
+      "points": null,
+      "captain": false,
+      "viceCaptain": false,
+      "fifaPlayerId": 400,
+      "rawPoints": null
+    },
+    {
+      "name": "David Møller Wolfe",
+      "position": "D",
+      "status": "yet_to_play",
+      "points": null,
+      "captain": false,
+      "viceCaptain": false,
+      "fifaPlayerId": 850,
+      "rawPoints": null
+    },
+    {
+      "name": "Joshua Kimmich",
+      "position": "D",
+      "status": "yet_to_play",
+      "points": null,
+      "captain": false,
+      "viceCaptain": false,
+      "fifaPlayerId": 542,
+      "rawPoints": null
+    },
+    {
+      "name": "Johan Vásquez",
+      "position": "D",
+      "status": "completed",
+      "points": 18,
+      "captain": true,
+      "viceCaptain": false,
+      "fifaPlayerId": 740,
+      "rawPoints": 9
+    },
+    {
+      "name": "Granit Xhaka",
+      "position": "M",
+      "status": "yet_to_play",
+      "points": null,
+      "captain": false,
+      "viceCaptain": true,
+      "fifaPlayerId": 1135,
+      "rawPoints": null
+    },
+    {
+      "name": "Kevin De Bruyne",
+      "position": "M",
+      "status": "yet_to_play",
+      "points": null,
+      "captain": false,
+      "viceCaptain": false,
+      "fifaPlayerId": 138,
+      "rawPoints": null
+    },
+    {
+      "name": "Martin Ødegaard",
+      "position": "M",
+      "status": "yet_to_play",
+      "points": null,
+      "captain": false,
+      "viceCaptain": false,
+      "fifaPlayerId": 1684,
+      "rawPoints": null
+    },
+    {
+      "name": "Erling Haaland",
+      "position": "F",
+      "status": "yet_to_play",
+      "points": null,
+      "captain": false,
+      "viceCaptain": false,
+      "fifaPlayerId": 855,
+      "rawPoints": null
+    },
+    {
+      "name": "Kylian Mbappé",
+      "position": "F",
+      "status": "yet_to_play",
+      "points": null,
+      "captain": false,
+      "viceCaptain": false,
+      "fifaPlayerId": 500,
+      "rawPoints": null
+    },
+    {
+      "name": "Cristiano Ronaldo",
+      "position": "F",
+      "status": "yet_to_play",
+      "points": null,
+      "captain": false,
+      "viceCaptain": false,
+      "fifaPlayerId": 1573,
+      "rawPoints": null
+    }
+  ],
+  "bench": [
+    {
+      "slot": 0,
+      "name": "Camilo Vargas",
+      "position": "G",
+      "status": "yet_to_play",
+      "points": null,
+      "fifaPlayerId": 262,
+      "rawPoints": null,
+      "captain": false,
+      "viceCaptain": false
+    },
+    {
+      "slot": 1,
+      "name": "Davinson Sánchez",
+      "position": "D",
+      "status": "yet_to_play",
+      "points": null,
+      "fifaPlayerId": 250,
+      "rawPoints": null,
+      "captain": false,
+      "viceCaptain": false
+    },
+    {
+      "slot": 2,
+      "name": "James Rodríguez",
+      "position": "M",
+      "status": "yet_to_play",
+      "points": null,
+      "fifaPlayerId": 270,
+      "rawPoints": null,
+      "captain": false,
+      "viceCaptain": false
+    },
+    {
+      "slot": 3,
+      "name": "Bruno Fernandes",
+      "position": "M",
+      "status": "yet_to_play",
+      "points": null,
+      "fifaPlayerId": 939,
+      "rawPoints": null,
+      "captain": false,
+      "viceCaptain": false
+    }
+  ]
+}

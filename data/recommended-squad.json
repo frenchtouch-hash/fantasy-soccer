@@ -1,0 +1,538 @@
+{
+  "generatedAt": "2026-06-11T16:48:26.458Z",
+  "source": "https://fantalens.com/players",
+  "rulesSource": "https://play.fifa.com/fantasy/help/guidelines",
+  "method": {
+    "budget": 100,
+    "countryLimit": 3,
+    "shape": {
+      "GK": 2,
+      "DEF": 5,
+      "MID": 5,
+      "FWD": 3
+    },
+    "objective": "Maximize FantaLens Matchday 1+2 adjusted xPts, including a 0.75x weighted expected Matchday 1 scouting bonus for under-5%-owned players, using players with startProb/p60 >= 50%, within official FIFA group-stage constraints.",
+    "scoringModel": {
+      "base": "FantaLens Matchday 1+2 xPts",
+      "scoutingBonus": "+2 * P(score > 4) * 0.75 when ownership < 5%",
+      "scoutingBonusProbability": "min(startProb, p60) * sigmoid((xPts - 4) / 1.25)"
+    },
+    "inputFile": "C:\\Users\\marti\\Documents\\fifafantasy\\data\\fantalens-players-rounds-1-2.json",
+    "projectedRounds": [
+      1,
+      2
+    ],
+    "candidateCaps": {
+      "G": 18,
+      "D": 24,
+      "M": 24,
+      "F": 24
+    },
+    "positionCombosKept": {
+      "G": 1500,
+      "D": 1600,
+      "M": 1600,
+      "F": 2200
+    },
+    "pairCombosKept": 15000
+  },
+  "totals": {
+    "price": 100,
+    "xpts": 162.99,
+    "scoutingBonus": 10.38,
+    "adjustedXpts": 173.37
+  },
+  "countryCounts": {
+    "BEL": 1,
+    "COL": 3,
+    "ECU": 1,
+    "FRA": 2,
+    "GER": 1,
+    "MEX": 1,
+    "NOR": 3,
+    "POR": 2,
+    "SUI": 1
+  },
+  "players": [
+    {
+      "position": "DEF",
+      "name": "Joshua Kimmich",
+      "team": "GER",
+      "price": 5.5,
+      "xpts": 11.54,
+      "scoutingBonus": 0,
+      "scoutingBonusProbability": 0,
+      "adjustedXpts": 11.54,
+      "ownership": 33.1,
+      "startProb": 0.918,
+      "p60": 0.865,
+      "setPieces": {
+        "penalty": 0.33,
+        "freekick": 0.55,
+        "corner": 0.65
+      },
+      "fixtures": [
+        {
+          "round": 1,
+          "opponent": "CUR",
+          "winChance": 0.936,
+          "xpts": 6.76
+        },
+        {
+          "round": 2,
+          "opponent": "CIV",
+          "winChance": 0.622,
+          "xpts": 4.77
+        }
+      ]
+    },
+    {
+      "position": "DEF",
+      "name": "Davinson Sánchez",
+      "team": "COL",
+      "price": 4.3,
+      "xpts": 8.83,
+      "scoutingBonus": 1.18,
+      "scoutingBonusProbability": 0.789,
+      "adjustedXpts": 10.01,
+      "ownership": 1.2,
+      "startProb": 0.874,
+      "p60": 0.806,
+      "setPieces": {
+        "penalty": null,
+        "freekick": null,
+        "corner": null
+      },
+      "fixtures": [
+        {
+          "round": 1,
+          "opponent": "UZB",
+          "winChance": 0.699,
+          "xpts": 4.53
+        },
+        {
+          "round": 2,
+          "opponent": "DCO",
+          "winChance": 0.658,
+          "xpts": 4.31
+        }
+      ]
+    },
+    {
+      "position": "DEF",
+      "name": "David Møller Wolfe",
+      "team": "NOR",
+      "price": 4,
+      "xpts": 8.61,
+      "scoutingBonus": 1.36,
+      "scoutingBonusProbability": 0.905,
+      "adjustedXpts": 9.97,
+      "ownership": 1.1,
+      "startProb": 0.947,
+      "p60": 0.928,
+      "setPieces": {
+        "penalty": null,
+        "freekick": null,
+        "corner": null
+      },
+      "fixtures": [
+        {
+          "round": 1,
+          "opponent": "IRA",
+          "winChance": 0.811,
+          "xpts": 5.15
+        },
+        {
+          "round": 2,
+          "opponent": "SEN",
+          "winChance": 0.443,
+          "xpts": 3.46
+        }
+      ]
+    },
+    {
+      "position": "DEF",
+      "name": "Johan Vásquez",
+      "team": "MEX",
+      "price": 4.7,
+      "xpts": 8.57,
+      "scoutingBonus": 1.36,
+      "scoutingBonusProbability": 0.908,
+      "adjustedXpts": 9.93,
+      "ownership": 2.8,
+      "startProb": 0.95,
+      "p60": 0.931,
+      "setPieces": {
+        "penalty": null,
+        "freekick": null,
+        "corner": null
+      },
+      "fixtures": [
+        {
+          "round": 1,
+          "opponent": "RSA",
+          "winChance": 0.688,
+          "xpts": 4.65
+        },
+        {
+          "round": 2,
+          "opponent": "KOR",
+          "winChance": 0.537,
+          "xpts": 3.92
+        }
+      ]
+    },
+    {
+      "position": "DEF",
+      "name": "Pervis Estupiñán",
+      "team": "ECU",
+      "price": 4.8,
+      "xpts": 8.34,
+      "scoutingBonus": 1.25,
+      "scoutingBonusProbability": 0.836,
+      "adjustedXpts": 9.59,
+      "ownership": 2.7,
+      "startProb": 0.907,
+      "p60": 0.862,
+      "setPieces": {
+        "penalty": null,
+        "freekick": null,
+        "corner": 0.4
+      },
+      "fixtures": [
+        {
+          "round": 1,
+          "opponent": "CIV",
+          "winChance": 0.397,
+          "xpts": 3.83
+        },
+        {
+          "round": 2,
+          "opponent": "CUR",
+          "winChance": 0.802,
+          "xpts": 4.51
+        }
+      ]
+    },
+    {
+      "position": "FWD",
+      "name": "Erling Haaland",
+      "team": "NOR",
+      "price": 10.5,
+      "xpts": 15.02,
+      "scoutingBonus": 0,
+      "scoutingBonusProbability": 0,
+      "adjustedXpts": 15.02,
+      "ownership": 33.1,
+      "startProb": 0.975,
+      "p60": 0.934,
+      "setPieces": {
+        "penalty": 0.67,
+        "freekick": 0.2,
+        "corner": null
+      },
+      "fixtures": [
+        {
+          "round": 1,
+          "opponent": "IRA",
+          "winChance": 0.811,
+          "xpts": 9.31
+        },
+        {
+          "round": 2,
+          "opponent": "SEN",
+          "winChance": 0.443,
+          "xpts": 5.71
+        }
+      ]
+    },
+    {
+      "position": "FWD",
+      "name": "Kylian Mbappé",
+      "team": "FRA",
+      "price": 10.5,
+      "xpts": 13.67,
+      "scoutingBonus": 0,
+      "scoutingBonusProbability": 0,
+      "adjustedXpts": 13.67,
+      "ownership": 49.3,
+      "startProb": 0.864,
+      "p60": 0.82,
+      "setPieces": {
+        "penalty": 1,
+        "freekick": 0.4,
+        "corner": 0.3
+      },
+      "fixtures": [
+        {
+          "round": 1,
+          "opponent": "SEN",
+          "winChance": 0.662,
+          "xpts": 5.8
+        },
+        {
+          "round": 2,
+          "opponent": "IRA",
+          "winChance": 0.86,
+          "xpts": 7.87
+        }
+      ]
+    },
+    {
+      "position": "FWD",
+      "name": "Cristiano Ronaldo",
+      "team": "POR",
+      "price": 10,
+      "xpts": 12.17,
+      "scoutingBonus": 0,
+      "scoutingBonusProbability": 0,
+      "adjustedXpts": 12.17,
+      "ownership": 11.4,
+      "startProb": 0.937,
+      "p60": 0.836,
+      "setPieces": {
+        "penalty": 0.71,
+        "freekick": 0.7,
+        "corner": null
+      },
+      "fixtures": [
+        {
+          "round": 1,
+          "opponent": "DCO",
+          "winChance": 0.759,
+          "xpts": 5.61
+        },
+        {
+          "round": 2,
+          "opponent": "UZB",
+          "winChance": 0.791,
+          "xpts": 6.56
+        }
+      ]
+    },
+    {
+      "position": "GK",
+      "name": "Mike Maignan",
+      "team": "FRA",
+      "price": 5,
+      "xpts": 9.49,
+      "scoutingBonus": 0,
+      "scoutingBonusProbability": 0,
+      "adjustedXpts": 9.49,
+      "ownership": 9.3,
+      "startProb": 0.979,
+      "p60": 0.959,
+      "setPieces": {
+        "penalty": null,
+        "freekick": null,
+        "corner": null
+      },
+      "fixtures": [
+        {
+          "round": 1,
+          "opponent": "SEN",
+          "winChance": 0.662,
+          "xpts": 4.49
+        },
+        {
+          "round": 2,
+          "opponent": "IRA",
+          "winChance": 0.86,
+          "xpts": 5
+        }
+      ]
+    },
+    {
+      "position": "GK",
+      "name": "Camilo Vargas",
+      "team": "COL",
+      "price": 4.3,
+      "xpts": 8.51,
+      "scoutingBonus": 1.25,
+      "scoutingBonusProbability": 0.836,
+      "adjustedXpts": 9.76,
+      "ownership": 3.6,
+      "startProb": 0.905,
+      "p60": 0.859,
+      "setPieces": {
+        "penalty": null,
+        "freekick": null,
+        "corner": null
+      },
+      "fixtures": [
+        {
+          "round": 1,
+          "opponent": "UZB",
+          "winChance": 0.699,
+          "xpts": 4.38
+        },
+        {
+          "round": 2,
+          "opponent": "DCO",
+          "winChance": 0.658,
+          "xpts": 4.13
+        }
+      ]
+    },
+    {
+      "position": "MID",
+      "name": "Martin Ødegaard",
+      "team": "NOR",
+      "price": 7.7,
+      "xpts": 12.89,
+      "scoutingBonus": 1.37,
+      "scoutingBonusProbability": 0.912,
+      "adjustedXpts": 14.26,
+      "ownership": 4.8,
+      "startProb": 0.975,
+      "p60": 0.913,
+      "setPieces": {
+        "penalty": null,
+        "freekick": 0.55,
+        "corner": 0.55
+      },
+      "fixtures": [
+        {
+          "round": 1,
+          "opponent": "IRA",
+          "winChance": 0.811,
+          "xpts": 7.77
+        },
+        {
+          "round": 2,
+          "opponent": "SEN",
+          "winChance": 0.443,
+          "xpts": 5.12
+        }
+      ]
+    },
+    {
+      "position": "MID",
+      "name": "James Rodríguez",
+      "team": "COL",
+      "price": 6.5,
+      "xpts": 12.7,
+      "scoutingBonus": 1.25,
+      "scoutingBonusProbability": 0.835,
+      "adjustedXpts": 13.95,
+      "ownership": 4.9,
+      "startProb": 0.853,
+      "p60": 0.836,
+      "setPieces": {
+        "penalty": 0.8,
+        "freekick": 0.55,
+        "corner": 0.45
+      },
+      "fixtures": [
+        {
+          "round": 1,
+          "opponent": "UZB",
+          "winChance": 0.699,
+          "xpts": 6.47
+        },
+        {
+          "round": 2,
+          "opponent": "DCO",
+          "winChance": 0.658,
+          "xpts": 6.22
+        }
+      ]
+    },
+    {
+      "position": "MID",
+      "name": "Bruno Fernandes",
+      "team": "POR",
+      "price": 8.5,
+      "xpts": 12.03,
+      "scoutingBonus": 0,
+      "scoutingBonusProbability": 0,
+      "adjustedXpts": 12.03,
+      "ownership": 51.1,
+      "startProb": 0.938,
+      "p60": 0.897,
+      "setPieces": {
+        "penalty": 0.29,
+        "freekick": 0.3,
+        "corner": 0.55
+      },
+      "fixtures": [
+        {
+          "round": 1,
+          "opponent": "DCO",
+          "winChance": 0.759,
+          "xpts": 5.62
+        },
+        {
+          "round": 2,
+          "opponent": "UZB",
+          "winChance": 0.791,
+          "xpts": 6.41
+        }
+      ]
+    },
+    {
+      "position": "MID",
+      "name": "Kevin De Bruyne",
+      "team": "BEL",
+      "price": 7.5,
+      "xpts": 11.79,
+      "scoutingBonus": 0,
+      "scoutingBonusProbability": 0,
+      "adjustedXpts": 11.79,
+      "ownership": 5.5,
+      "startProb": 0.975,
+      "p60": 0.889,
+      "setPieces": {
+        "penalty": 0.43,
+        "freekick": 0.6,
+        "corner": 0.55
+      },
+      "fixtures": [
+        {
+          "round": 1,
+          "opponent": "EGY",
+          "winChance": 0.582,
+          "xpts": 5.47
+        },
+        {
+          "round": 2,
+          "opponent": "IRI",
+          "winChance": 0.702,
+          "xpts": 6.32
+        }
+      ]
+    },
+    {
+      "position": "MID",
+      "name": "Granit Xhaka",
+      "team": "SUI",
+      "price": 6.2,
+      "xpts": 8.83,
+      "scoutingBonus": 1.34,
+      "scoutingBonusProbability": 0.895,
+      "adjustedXpts": 10.17,
+      "ownership": 4.7,
+      "startProb": 0.975,
+      "p60": 0.914,
+      "setPieces": {
+        "penalty": 0.43,
+        "freekick": 0.55,
+        "corner": 0.55
+      },
+      "fixtures": [
+        {
+          "round": 1,
+          "opponent": "QAT",
+          "winChance": 0.803,
+          "xpts": 4.93
+        },
+        {
+          "round": 2,
+          "opponent": "BIH",
+          "winChance": 0.598,
+          "xpts": 3.89
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+.env
+.env.local
+.secrets/
+node_modules/
+tmp-fifa-js/
+tmp-fifa-main.js
+tmp-fifa-fantasy-team.html
+tmp-fifa-scores-fixtures.html
+tmp-fantalens-login.html
+tmp-fantalens-players-auth.html

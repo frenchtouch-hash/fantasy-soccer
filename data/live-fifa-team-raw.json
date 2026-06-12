@@ -1,0 +1,75 @@
+{
+  "fetchedAt": "2026-06-12T17:14:58.089Z",
+  "fetchMethod": "api",
+  "url": "https://play.fifa.com/api/en/fantasy/team/history/1",
+  "diagnostics": {
+    "lineupCount": 11,
+    "benchCount": 4,
+    "idBased": true
+  },
+  "raw": {
+    "success": {
+      "id": 1123226,
+      "startRoundId": 1,
+      "captain": 740,
+      "vice": 1135,
+      "lineup": {
+        "GK": [
+          506
+        ],
+        "DEF": [
+          400,
+          850,
+          542,
+          740
+        ],
+        "MID": [
+          1135,
+          138,
+          1684
+        ],
+        "FWD": [
+          855,
+          500,
+          1573
+        ]
+      },
+      "bench": {
+        "GK": [
+          262
+        ],
+        "DEF": [
+          250
+        ],
+        "MID": [
+          270,
+          939
+        ],
+        "FWD": []
+      },
+      "benchOrder": [
+        262,
+        250,
+        270,
+        939
+      ],
+      "substitutions": [],
+      "transfers": [],
+      "captainChanges": [],
+      "value": 100,
+      "maxCaptain": null,
+      "maxCaptainBooster": null,
+      "twelfthMan": null,
+      "wildCard": null,
+      "qualification": null,
+      "cleanSheet": null,
+      "qualificationPlayerIds": [],
+      "cleanSheetPlayerIds": [],
+      "roundPoints": 18,
+      "overallPoints": 18,
+      "freeTransfers": null,
+      "negativeTransfers": 0
+    },
+    "errors": []
+  }
+}
