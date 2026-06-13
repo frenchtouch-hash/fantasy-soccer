@@ -82,8 +82,8 @@
       },
       {
         "id": 3,
-        "period": "pre_match",
-        "minutes": 0,
+        "period": "full_time",
+        "minutes": 97,
         "extraMinutes": 0,
         "venueName": "Bmo Field",
         "venueCity": "Toronto",
@@ -91,7 +91,7 @@
         "venueCityTranslationKey": null,
         "venueId": 3,
         "date": "2026-06-12T20:00:00+01:00",
-        "status": "scheduled",
+        "status": "complete",
         "isSuspended": false,
         "homeSquadId": 9,
         "awaySquadId": 6,
@@ -99,12 +99,22 @@
         "awaySquadName": "Bosnia and Herzegovina",
         "homeSquadAbbr": "CAN",
         "awaySquadAbbr": "BIH",
-        "homeScore": null,
-        "homePenaltyScore": null,
-        "homeGoalScorersAssists": null,
-        "awayScore": null,
-        "awayPenaltyScore": null,
-        "awayGoalScorersAssists": null
+        "homeScore": 1,
+        "homePenaltyScore": 0,
+        "homeGoalScorersAssists": [
+          {
+            "playerId": 227,
+            "assistId": 1970
+          }
+        ],
+        "awayScore": 1,
+        "awayPenaltyScore": 0,
+        "awayGoalScorersAssists": [
+          {
+            "playerId": 148,
+            "assistId": 139
+          }
+        ]
       },
       {
         "id": 4,
