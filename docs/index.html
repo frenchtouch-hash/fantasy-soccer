@@ -3,384 +3,324 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>FIFA Fantasy Next Round</title>
+  <title>FIFA Fantasy Live Round 2</title>
   <style>
     :root {
-      --bg: #f5f1e8;
-      --ink: #17211d;
-      --muted: #68746c;
-      --line: #d9d0bf;
+      --bg: #f4f1e8;
+      --ink: #18231f;
+      --muted: #69766d;
+      --line: #d7cebd;
       --panel: #fffaf0;
-      --panel-strong: #16362e;
-      --accent: #0b7f67;
-      --warn: #c26a12;
-      --good: #116d48;
-      --shadow: 0 18px 50px rgba(33, 39, 33, .12);
+      --green: #0c765f;
+      --navy: #15372f;
+      --orange: #c2621a;
+      --red: #a13b2b;
+      --shadow: 0 18px 48px rgba(31, 39, 32, .12);
       --font: "Aptos", "Segoe UI", sans-serif;
     }
     * { box-sizing: border-box; }
     body {
       margin: 0;
-      background:
-        linear-gradient(135deg, rgba(11,127,103,.12), transparent 32%),
-        linear-gradient(180deg, #fffaf0, var(--bg));
       color: var(--ink);
+      background: linear-gradient(135deg, rgba(12,118,95,.14), transparent 34%), linear-gradient(180deg, #fffaf0, var(--bg));
       font-family: var(--font);
     }
-    main { max-width: 1180px; margin: 0 auto; padding: 28px 18px 44px; }
-    .hero {
-      display: grid;
-      grid-template-columns: 1.3fr .7fr;
-      gap: 18px;
-      align-items: stretch;
-      margin-bottom: 18px;
-    }
-    .hero-main, .hero-side, .panel, .decision-card {
-      background: rgba(255,250,240,.92);
+    main { max-width: 1220px; margin: 0 auto; padding: 28px 18px 46px; }
+    .hero, .panel, .decision-card {
+      background: rgba(255,250,240,.94);
       border: 1px solid var(--line);
-      box-shadow: var(--shadow);
       border-radius: 8px;
+      box-shadow: var(--shadow);
     }
-    .hero-main { padding: 28px; }
-    .hero-side { padding: 20px; display: grid; gap: 14px; }
-    .eyebrow {
-      margin: 0 0 8px;
-      color: var(--accent);
-      font-weight: 800;
-      font-size: .76rem;
-      text-transform: uppercase;
-      letter-spacing: .06em;
-    }
+    .hero { display: grid; grid-template-columns: 1.25fr .75fr; gap: 18px; padding: 24px; margin-bottom: 18px; }
+    .eyebrow { margin: 0 0 8px; color: var(--green); font-size: .76rem; font-weight: 800; text-transform: uppercase; letter-spacing: .06em; }
     h1, h2, h3, p { margin: 0; }
-    h1 { font-size: clamp(2rem, 5vw, 4.2rem); line-height: .98; max-width: 760px; }
-    h2 { font-size: 1.15rem; margin-bottom: 14px; }
-    h3 { font-size: 1.02rem; }
+    h1 { font-size: clamp(2rem, 5vw, 4rem); line-height: .98; max-width: 760px; }
+    h2 { font-size: 1.12rem; margin-bottom: 14px; }
+    h3 { font-size: 1rem; }
     .muted { color: var(--muted); }
-    .hero-summary { margin-top: 18px; font-size: 1.08rem; max-width: 720px; color: #39443d; }
-    .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 22px; }
-    .stat { border-top: 1px solid var(--line); padding-top: 12px; min-width: 0; }
-    .stat strong { display: block; font-size: 1.28rem; margin-top: 4px; }
-    .layout { display: grid; grid-template-columns: 1fr .9fr; gap: 18px; }
+    .hero-copy { margin-top: 16px; color: #3c473f; font-size: 1.05rem; max-width: 760px; }
+    .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 22px; }
+    .stat { border-top: 1px solid var(--line); padding-top: 12px; }
+    .stat strong { display: block; margin-top: 4px; font-size: 1.35rem; }
+    .side { display: grid; align-content: start; gap: 14px; }
+    .side-block { border-left: 3px solid rgba(12,118,95,.24); padding-left: 14px; }
+    .layout { display: grid; grid-template-columns: .92fr 1.08fr; gap: 18px; margin-bottom: 18px; }
     .panel { padding: 20px; }
     .decision-grid { display: grid; gap: 12px; }
-    .decision-card { padding: 16px; box-shadow: none; }
-    .transfer-card {
-      display: grid;
-      grid-template-columns: 1fr auto 1fr;
-      gap: 14px;
-      align-items: center;
-    }
-    .transfer-card h3 span { color: var(--warn); font-weight: 700; }
-    .arrow { color: var(--accent); font-size: 1.4rem; font-weight: 900; }
-    .captain-call {
-      background: var(--panel-strong);
-      color: #f7fff9;
-      border-color: transparent;
-    }
-    .captain-call .muted { color: #b9cec5; }
-    table { width: 100%; border-collapse: collapse; font-size: .94rem; }
-    th, td {
-      text-align: left;
-      border-bottom: 1px solid rgba(23,33,29,.11);
-      padding: 10px 0;
-      vertical-align: top;
-    }
-    th { color: var(--muted); font-size: .82rem; }
-    .badge {
-      display: inline-block;
-      margin-left: 5px;
-      padding: 2px 6px;
-      background: rgba(11,127,103,.1);
-      color: var(--accent);
-      border: 1px solid rgba(11,127,103,.25);
-      border-radius: 4px;
-      font-size: .72rem;
-      font-weight: 800;
-    }
-    .player-meta { margin-top: 4px; font-size: .82rem; display: flex; align-items: center; gap: 6px; }
+    .decision-card { box-shadow: none; padding: 16px; }
+    .decision-card.move { border-color: rgba(12,118,95,.5); background: rgba(232,248,241,.88); }
+    .decision-card.hold { border-color: rgba(21,55,47,.28); }
+    .decision-card.warn { border-color: rgba(194,98,26,.45); background: rgba(255,244,229,.9); }
+    table { width: 100%; border-collapse: collapse; font-size: .93rem; }
+    th, td { text-align: left; border-bottom: 1px solid rgba(24,35,31,.1); padding: 10px 0; vertical-align: top; }
+    th { color: var(--muted); font-size: .8rem; }
+    .badge, .pill { display: inline-block; border-radius: 4px; padding: 2px 6px; font-size: .72rem; font-weight: 800; }
+    .badge { margin-left: 5px; color: var(--green); border: 1px solid rgba(12,118,95,.24); background: rgba(12,118,95,.09); }
+    .move-pill { color: #fff; background: var(--green); }
+    .hold-pill { color: var(--navy); background: rgba(21,55,47,.1); }
+    .player-meta { margin-top: 4px; display: flex; align-items: center; gap: 6px; font-size: .82rem; }
     .flag-icon { width: 15px; height: 10px; object-fit: cover; border-radius: 2px; }
-    .past-note { margin-top: 12px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,.18); }
-    @media (max-width: 860px) {
-      .hero, .layout { grid-template-columns: 1fr; }
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-bottom: 18px; }
+    @media (max-width: 900px) {
+      .hero, .layout, .two-col { grid-template-columns: 1fr; }
       .stats { grid-template-columns: 1fr; }
-      .transfer-card { grid-template-columns: 1fr; }
-      .arrow { transform: rotate(90deg); width: fit-content; }
+      .hero { padding: 18px; }
     }
   </style>
 </head>
 <body>
   <main>
     <section class="hero">
-      <div class="hero-main">
-        <p class="eyebrow">Next decision · Round 2</p>
-        <h1>Captain Kylian Mbappé</h1>
-        <p class="hero-summary">
-          Use the two free transfers first, then set captaincy for Round 2. The dashboard keeps Round 1 points visible, but the main focus is the next lock and the next scoring window.
-        </p>
+      <div>
+        <p class="eyebrow">Live Round 2 · GROUP</p>
+        <h1>Hold current setup</h1>
+        <p class="hero-copy">Advice is based on the latest FIFA squad sync, current-round points, locked players, remaining fixtures, and FantaLens projections for players who have not played yet.</p>
         <div class="stats">
-          <div class="stat">
-            <span class="muted">Transfer deadline</span>
-            <strong><span class="relative-time" data-timestamp="2026-06-18T17:00:00+01:00" data-mode="future" title="Jun 18, 2026, 12:00:00 PM EDT">soon</span> · Thu, Jun 18, 12:00 PM</strong>
-          </div>
-          <div class="stat">
-            <span class="muted">Projected transfer gain</span>
-            <strong>+5.98 pts</strong>
-          </div>
-          <div class="stat">
-            <span class="muted">Current points banked</span>
-            <strong>80</strong>
-          </div>
+          <div class="stat"><span class="muted">Current round points</span><strong>18</strong></div>
+          <div class="stat"><span class="muted">Captain</span><strong>Johan Vásquez</strong><span class="muted">18 (raw 9) pts · Complete</span></div>
+          <div class="stat"><span class="muted">Next squad lock</span><strong>Sat, Jun 20, 4:00 PM</strong></div>
         </div>
       </div>
-      <aside class="hero-side">
-        <div>
+      <aside class="side">
+        <div class="side-block">
+          <p class="eyebrow">Latest completed game</p>
+          <h2>TUR vs PAR 0-1</h2>
+          <p class="muted">Fri, Jun 19, 11:00 PM</p>
+          <p class="muted">No squad player in that fixture.</p>
+        </div>
+        <div class="side-block">
           <p class="eyebrow">Next game</p>
           <h2>NED vs SWE</h2>
-          <p class="muted">Sat, Jun 20, 1:00 PM · <span class="relative-time" data-timestamp="2026-06-20T18:00:00+01:00" data-mode="future" title="Jun 20, 2026, 1:00:00 PM EDT">tomorrow</span></p>
+          <p class="muted">Sat, Jun 20, 1:00 PM · <span class="relative-time" data-timestamp="2026-06-20T18:00:00+01:00" data-mode="future" title="Jun 20, 2026, 1:00:00 PM EDT">today</span></p>
         </div>
-        <div>
-          <p class="eyebrow">Next squad player</p>
-          <h2>Granit Xhaka</h2>
-          <p class="muted">SUI vs BIH · Thu, Jun 18, 3:00 PM</p>
-        </div>
-        <div class="past-note">
-          <p class="muted">Last sync <span class="relative-time" data-timestamp="2026-06-20T03:04:05.619Z" data-mode="past" title="Jun 19, 2026, 11:04:05 PM EDT">just now</span> · advice <span class="relative-time" data-timestamp="2026-06-20T03:04:07.595Z" data-mode="past" title="Jun 19, 2026, 11:04:07 PM EDT">just now</span></p>
+        <div class="side-block">
+          <p class="eyebrow">Freshness</p>
+          <p class="muted">FIFA sync <span class="relative-time" data-timestamp="2026-06-20T05:14:46.889Z" data-mode="past" title="Jun 20, 2026, 1:14:46 AM EDT">just now</span> · state <span class="relative-time" data-timestamp="2026-06-20T05:14:46.889Z" data-mode="past" title="Jun 20, 2026, 1:14:46 AM EDT">just now</span></p>
         </div>
       </aside>
     </section>
 
     <section class="layout">
       <div class="panel">
-        <h2>What to do before Round 2</h2>
-        <div class="decision-grid">
-          
-    <div class="decision-card transfer-card">
-      <div>
-        <p class="eyebrow">FWD</p>
-        <h3>Erling Haaland <span>out</span></h3>
-        <p class="muted">NOR vs SEN · 10.28 projected over R2+3</p>
+        <h2>Immediate advice</h2>
+        <div class="decision-grid"><article class="decision-card hold"><h3>No manual move required now</h3><p>Johan Vásquez has 18 effective points. Best unlocked captain target is Kylian Mbappé, projected 17.48 effective points, which is not enough edge to force a switch.</p></article></div>
       </div>
-      <div class="arrow">→</div>
-      <div>
-        <p class="eyebrow">FWD</p>
-        <h3>Harry Kane <span>in</span></h3>
-        <p class="muted">ENG vs GHA · 13.76 projected over R2+3</p>
-      </div>
-    </div>
-  
-    <div class="decision-card transfer-card">
-      <div>
-        <p class="eyebrow">DEF</p>
-        <h3>Pervis Estupiñán <span>out</span></h3>
-        <p class="muted">ECU vs CUR · 5.98 projected over R2+3</p>
-      </div>
-      <div class="arrow">→</div>
-      <div>
-        <p class="eyebrow">DEF</p>
-        <h3>Nayef Aguerd <span>in</span></h3>
-        <p class="muted">MOR vs SCO · 8.48 projected over R2+3</p>
-      </div>
-    </div>
-  
-          <div class="decision-card captain-call">
-            <p class="eyebrow">Captain</p>
-            <h3>Kylian Mbappé captain, Kevin De Bruyne vice</h3>
-            <p class="muted">8.74 projected Round 2 points vs IRA.</p>
-          </div>
-        </div>
-      </div>
-
       <div class="panel">
-        <h2>Captain ranking</h2>
-        <table>
-          <thead><tr><th>Role</th><th>Player</th><th>Fixture</th><th>R2 xPts</th></tr></thead>
+        <h2>Captain recommendation</h2>
+        <article class="decision-card hold">
+          <h3>Keep Johan Vásquez</h3>
+          <p>Johan Vásquez has 18 effective points. Best unlocked captain target is Kylian Mbappé, projected 17.48 effective points, which is not enough edge to force a switch.</p>
+        </article>
+        <table style="margin-top:12px">
+          <thead><tr><th>Rank</th><th>Player</th><th>Fixture</th><th>xPts</th></tr></thead>
           <tbody>
     <tr>
-      <td><strong>Captain</strong></td>
-      <td>Kylian Mbappé<div class="muted">FWD · FRA</div></td>
-      <td>FRA vs IRA</td>
+      <td><strong>Best</strong></td>
+      <td>Kylian Mbappé<div class="muted">F · FRA</div></td>
+      <td>FRA vs IRQ&lt;br&gt;&lt;span class=&quot;muted&quot;&gt;Mon, Jun 22, 5:00 PM&lt;/span&gt;</td>
       <td>8.74</td>
     </tr>
   
     <tr>
-      <td>Vice</td>
-      <td>Kevin De Bruyne<div class="muted">MID · BEL</div></td>
-      <td>BEL vs IRI</td>
-      <td>6.54</td>
+      <td>Option 2</td>
+      <td>James Rodríguez<div class="muted">M · COL</div></td>
+      <td>COL vs COD&lt;br&gt;&lt;span class=&quot;muted&quot;&gt;Tue, Jun 23, 10:00 PM&lt;/span&gt;</td>
+      <td>6.30</td>
     </tr>
   
     <tr>
       <td>Option 3</td>
-      <td>Harry Kane<div class="muted">FWD · ENG</div></td>
-      <td>ENG vs GHA</td>
-      <td>6.41</td>
+      <td>Cristiano Ronaldo<div class="muted">F · POR</div></td>
+      <td>POR vs UZB&lt;br&gt;&lt;span class=&quot;muted&quot;&gt;Tue, Jun 23, 1:00 PM&lt;/span&gt;</td>
+      <td>6.30</td>
     </tr>
   
     <tr>
       <td>Option 4</td>
-      <td>James Rodríguez<div class="muted">MID · COL</div></td>
-      <td>COL vs DCO</td>
-      <td>6.30</td>
+      <td>Bruno Fernandes<div class="muted">M · POR</div></td>
+      <td>POR vs UZB&lt;br&gt;&lt;span class=&quot;muted&quot;&gt;Tue, Jun 23, 1:00 PM&lt;/span&gt;</td>
+      <td>6.25</td>
     </tr>
   
     <tr>
       <td>Option 5</td>
-      <td>Cristiano Ronaldo<div class="muted">FWD · POR</div></td>
-      <td>POR vs UZB</td>
-      <td>6.30</td>
+      <td>Erling Haaland<div class="muted">F · NOR</div></td>
+      <td>NOR vs SEN&lt;br&gt;&lt;span class=&quot;muted&quot;&gt;Mon, Jun 22, 8:00 PM&lt;/span&gt;</td>
+      <td>5.66</td>
     </tr>
   </tbody>
         </table>
       </div>
     </section>
 
-    <section class="panel" style="margin-top:18px">
-      <h2>Squad points and next projections</h2>
+    <section class="two-col">
+      <div class="panel">
+        <h2>Manual substitution checks</h2>
+        <table>
+          <thead><tr><th>Starter out</th><th>Bench in</th><th>xPts</th><th>Gain</th><th>Call</th></tr></thead>
+          <tbody>
+    <tr>
+      <td>Johan Vásquez<div class="muted">D · 18 (raw 9) pts</div></td>
+      <td>Kevin De Bruyne<div class="muted">M · Sun, Jun 21, 3:00 PM</div></td>
+      <td>6.54</td>
+      <td>-11.46</td>
+      <td><span class="pill hold-pill">Hold</span></td>
+    </tr>
+  </tbody>
+        </table>
+      </div>
+      <div class="panel">
+        <h2>Locked bench points</h2>
+        <table>
+          <thead><tr><th>Bench player</th><th>Status</th><th>Points</th><th>Fixture</th></tr></thead>
+          <tbody><tr><td>Granit Xhaka</td><td>Complete</td><td>10</td><td>SUI vs BIH · 4-1</td></tr></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Current squad</h2>
       <table>
-        <thead>
-          <tr><th>Player</th><th>Pos</th><th>Past points</th><th>R2 xPts</th><th>R2+3 xPts</th></tr>
-        </thead>
+        <thead><tr><th>Player</th><th>Pos</th><th>Status</th><th>Round pts</th><th>xPts left</th><th>Fixture</th></tr></thead>
         <tbody>
-          <tr>
-    <td>
-      Camilo Vargas 
-      <div class="muted player-meta"><img class="flag-icon" src="https://flagcdn.com/w20/co.png" alt="">Colombia</div>
-    </td>
-    <td>GK</td>
-    <td>2</td>
-    <td>3.97</td>
-    <td>6.94</td>
-  </tr><tr>
-    <td>
-      Dávinson Sánchez 
-      <div class="muted player-meta"><img class="flag-icon" src="https://flagcdn.com/w20/co.png" alt="">Colombia</div>
-    </td>
-    <td>DEF</td>
-    <td>2</td>
-    <td>4.19</td>
-    <td>6.59</td>
-  </tr><tr>
-    <td>
-      David Møller Wolfe 
-      <div class="muted player-meta"><img class="flag-icon" src="https://flagcdn.com/w20/no.png" alt="">Norway</div>
-    </td>
-    <td>DEF</td>
-    <td>7</td>
-    <td>3.34</td>
-    <td>5.57</td>
-  </tr><tr>
-    <td>
-      Joshua Kimmich 
-      <div class="muted player-meta"><img class="flag-icon" src="https://flagcdn.com/w20/de.png" alt="">Germany</div>
-    </td>
-    <td>DEF</td>
-    <td>8</td>
-    <td>4.90</td>
-    <td>9.59</td>
-  </tr><tr>
-    <td>
-      Johan Vásquez <span class="badge">C</span>
-      <div class="muted player-meta"><img class="flag-icon" src="https://flagcdn.com/w20/mx.png" alt="">Mexico</div>
-    </td>
-    <td>DEF</td>
-    <td>18 <span class="muted">(raw 9)</span></td>
-    <td>3.85</td>
-    <td>7.76</td>
-  </tr><tr>
-    <td>
-      James Rodríguez <span class="badge">VC</span>
-      <div class="muted player-meta"><img class="flag-icon" src="https://flagcdn.com/w20/co.png" alt="">Colombia</div>
-    </td>
-    <td>MID</td>
-    <td>2</td>
-    <td>6.30</td>
-    <td>10.39</td>
-  </tr><tr>
-    <td>
-      Bruno Fernandes 
-      <div class="muted player-meta"><img class="flag-icon" src="https://flagcdn.com/w20/pt.png" alt="">Portugal</div>
-    </td>
-    <td>MID</td>
-    <td>3</td>
-    <td>6.25</td>
-    <td>10.63</td>
-  </tr><tr>
-    <td>
-      Martin Ødegaard 
-      <div class="muted player-meta"><img class="flag-icon" src="https://flagcdn.com/w20/no.png" alt="">Norway</div>
-    </td>
-    <td>MID</td>
-    <td>5</td>
-    <td>4.75</td>
-    <td>8.89</td>
-  </tr><tr>
-    <td>
-      Erling Haaland 
-      <div class="muted player-meta"><img class="flag-icon" src="https://flagcdn.com/w20/no.png" alt="">Norway</div>
-    </td>
-    <td>FWD</td>
-    <td>17</td>
-    <td>5.66</td>
-    <td>10.28</td>
-  </tr><tr>
-    <td>
-      Kylian Mbappé 
-      <div class="muted player-meta"><img class="flag-icon" src="https://flagcdn.com/w20/fr.png" alt="">France</div>
-    </td>
-    <td>FWD</td>
-    <td>14</td>
-    <td>8.74</td>
-    <td>14.53</td>
-  </tr><tr>
-    <td>
-      Cristiano Ronaldo 
-      <div class="muted player-meta"><img class="flag-icon" src="https://flagcdn.com/w20/pt.png" alt="">Portugal</div>
-    </td>
-    <td>FWD</td>
-    <td>2</td>
-    <td>6.30</td>
-    <td>10.29</td>
-  </tr>
-          <tr>
-    <td>
-      Mike Maignan <span class="badge">Bench</span>
-      <div class="muted player-meta"><img class="flag-icon" src="https://flagcdn.com/w20/fr.png" alt="">France</div>
-    </td>
-    <td>GK</td>
-    <td>2</td>
-    <td>4.99</td>
-    <td>8.81</td>
-  </tr><tr>
-    <td>
-      Pervis Estupiñán <span class="badge">Bench</span>
-      <div class="muted player-meta"><img class="flag-icon" src="https://flagcdn.com/w20/ec.png" alt="">Ecuador</div>
-    </td>
-    <td>DEF</td>
-    <td><span class="muted">-</span></td>
-    <td>4.35</td>
-    <td>5.98</td>
-  </tr><tr>
-    <td>
-      Granit Xhaka <span class="badge">Bench</span>
-      <div class="muted player-meta"><img class="flag-icon" src="https://flagcdn.com/w20/ch.png" alt="">Switzerland</div>
-    </td>
-    <td>MID</td>
-    <td>10</td>
-    <td>3.87</td>
-    <td>7.27</td>
-  </tr><tr>
-    <td>
-      Kevin De Bruyne <span class="badge">Bench</span>
-      <div class="muted player-meta"><img class="flag-icon" src="https://flagcdn.com/w20/be.png" alt="">Belgium</div>
-    </td>
-    <td>MID</td>
-    <td>2</td>
-    <td>6.54</td>
-    <td>14.62</td>
-  </tr>
-        </tbody>
+      <tr>
+        <td>Camilo Vargas <div class="muted player-meta"><img class="flag-icon" src="https://flagcdn.com/w20/co.png" alt="">Colombia</div></td>
+        <td>G</td>
+        <td>Unlocked</td>
+        <td>-</td>
+        <td>3.97</td>
+        <td>COL vs COD<br><span class="muted">Tue, Jun 23, 10:00 PM</span></td>
+      </tr>
+    
+      <tr>
+        <td>Dávinson Sánchez <div class="muted player-meta"><img class="flag-icon" src="https://flagcdn.com/w20/co.png" alt="">Colombia</div></td>
+        <td>D</td>
+        <td>Unlocked</td>
+        <td>-</td>
+        <td>4.19</td>
+        <td>COL vs COD<br><span class="muted">Tue, Jun 23, 10:00 PM</span></td>
+      </tr>
+    
+      <tr>
+        <td>David Møller Wolfe <div class="muted player-meta"><img class="flag-icon" src="https://flagcdn.com/w20/no.png" alt="">Norway</div></td>
+        <td>D</td>
+        <td>Unlocked</td>
+        <td>-</td>
+        <td>3.34</td>
+        <td>NOR vs SEN<br><span class="muted">Mon, Jun 22, 8:00 PM</span></td>
+      </tr>
+    
+      <tr>
+        <td>Joshua Kimmich <div class="muted player-meta"><img class="flag-icon" src="https://flagcdn.com/w20/de.png" alt="">Germany</div></td>
+        <td>D</td>
+        <td>Unlocked</td>
+        <td>-</td>
+        <td>4.90</td>
+        <td>GER vs CIV<br><span class="muted">Sat, Jun 20, 4:00 PM</span></td>
+      </tr>
+    
+      <tr>
+        <td>Johan Vásquez <span class="badge">C</span><div class="muted player-meta"><img class="flag-icon" src="https://flagcdn.com/w20/mx.png" alt="">Mexico</div></td>
+        <td>D</td>
+        <td>Complete</td>
+        <td>18 (raw 9)</td>
+        <td>3.85</td>
+        <td>MEX vs KOR · 1-0</td>
+      </tr>
+    
+      <tr>
+        <td>James Rodríguez <span class="badge">VC</span><div class="muted player-meta"><img class="flag-icon" src="https://flagcdn.com/w20/co.png" alt="">Colombia</div></td>
+        <td>M</td>
+        <td>Unlocked</td>
+        <td>-</td>
+        <td>6.30</td>
+        <td>COL vs COD<br><span class="muted">Tue, Jun 23, 10:00 PM</span></td>
+      </tr>
+    
+      <tr>
+        <td>Bruno Fernandes <div class="muted player-meta"><img class="flag-icon" src="https://flagcdn.com/w20/pt.png" alt="">Portugal</div></td>
+        <td>M</td>
+        <td>Unlocked</td>
+        <td>-</td>
+        <td>6.25</td>
+        <td>POR vs UZB<br><span class="muted">Tue, Jun 23, 1:00 PM</span></td>
+      </tr>
+    
+      <tr>
+        <td>Martin Ødegaard <div class="muted player-meta"><img class="flag-icon" src="https://flagcdn.com/w20/no.png" alt="">Norway</div></td>
+        <td>M</td>
+        <td>Unlocked</td>
+        <td>-</td>
+        <td>4.75</td>
+        <td>NOR vs SEN<br><span class="muted">Mon, Jun 22, 8:00 PM</span></td>
+      </tr>
+    
+      <tr>
+        <td>Erling Haaland <div class="muted player-meta"><img class="flag-icon" src="https://flagcdn.com/w20/no.png" alt="">Norway</div></td>
+        <td>F</td>
+        <td>Unlocked</td>
+        <td>-</td>
+        <td>5.66</td>
+        <td>NOR vs SEN<br><span class="muted">Mon, Jun 22, 8:00 PM</span></td>
+      </tr>
+    
+      <tr>
+        <td>Kylian Mbappé <div class="muted player-meta"><img class="flag-icon" src="https://flagcdn.com/w20/fr.png" alt="">France</div></td>
+        <td>F</td>
+        <td>Unlocked</td>
+        <td>-</td>
+        <td>8.74</td>
+        <td>FRA vs IRQ<br><span class="muted">Mon, Jun 22, 5:00 PM</span></td>
+      </tr>
+    
+      <tr>
+        <td>Cristiano Ronaldo <div class="muted player-meta"><img class="flag-icon" src="https://flagcdn.com/w20/pt.png" alt="">Portugal</div></td>
+        <td>F</td>
+        <td>Unlocked</td>
+        <td>-</td>
+        <td>6.30</td>
+        <td>POR vs UZB<br><span class="muted">Tue, Jun 23, 1:00 PM</span></td>
+      </tr>
+    
+      <tr>
+        <td>Mike Maignan <span class="badge">Bench</span><div class="muted player-meta"><img class="flag-icon" src="https://flagcdn.com/w20/fr.png" alt="">France</div></td>
+        <td>G</td>
+        <td>Unlocked</td>
+        <td>-</td>
+        <td>4.99</td>
+        <td>FRA vs IRQ<br><span class="muted">Mon, Jun 22, 5:00 PM</span></td>
+      </tr>
+    
+      <tr>
+        <td>Pervis Estupiñán <span class="badge">Bench</span><div class="muted player-meta"><img class="flag-icon" src="https://flagcdn.com/w20/ec.png" alt="">Ecuador</div></td>
+        <td>D</td>
+        <td>Unlocked</td>
+        <td>-</td>
+        <td>4.35</td>
+        <td>ECU vs CUW<br><span class="muted">Sat, Jun 20, 8:00 PM</span></td>
+      </tr>
+    
+      <tr>
+        <td>Granit Xhaka <span class="badge">Bench</span><div class="muted player-meta"><img class="flag-icon" src="https://flagcdn.com/w20/ch.png" alt="">Switzerland</div></td>
+        <td>M</td>
+        <td>Complete</td>
+        <td>10</td>
+        <td>3.87</td>
+        <td>SUI vs BIH · 4-1</td>
+      </tr>
+    
+      <tr>
+        <td>Kevin De Bruyne <span class="badge">Bench</span><div class="muted player-meta"><img class="flag-icon" src="https://flagcdn.com/w20/be.png" alt="">Belgium</div></td>
+        <td>M</td>
+        <td>Unlocked</td>
+        <td>-</td>
+        <td>6.54</td>
+        <td>BEL vs IRN<br><span class="muted">Sun, Jun 21, 3:00 PM</span></td>
+      </tr>
+    </tbody>
       </table>
-      <p class="muted" style="margin-top:12px">Projection source: fantalens-players-rounds-1-2-3.json. Transfer advice ignores completed Round 1 and optimizes Round 2 + Round 3.</p>
+      <p class="muted" style="margin-top:12px">Projection source: fantalens-players-rounds-1-2-3.json. Current-round points come from the FIFA fantasy feed.</p>
     </section>
   </main>
   <script>
@@ -393,8 +333,7 @@
           const dayDiff = Math.floor((Date.UTC(target.getFullYear(), target.getMonth(), target.getDate()) - Date.UTC(now.getFullYear(), now.getMonth(), now.getDate())) / dayMs);
           if (dayDiff === 0) return "today";
           if (dayDiff === 1) return "tomorrow";
-          if (dayDiff === 2) return "in two days";
-          if (dayDiff > 2) return "in " + dayDiff + " days";
+          if (dayDiff > 1) return "in " + dayDiff + " days";
         }
         if (diffMs < 60000) return mode === "past" ? "just now" : "soon";
         const minutes = Math.floor(diffMs / 60000);
