@@ -6,66 +6,86 @@
   <title>FIFA Fantasy Live Round 3</title>
   <style>
     :root {
-      --bg: #f4f1e8;
-      --ink: #18231f;
-      --muted: #69766d;
-      --line: #d7cebd;
+      --bg: #f6f2e8;
+      --ink: #17201c;
+      --muted: #68746c;
+      --line: #d8cdbb;
       --panel: #fffaf0;
-      --green: #0c765f;
-      --navy: #15372f;
-      --orange: #c2621a;
+      --surface: rgba(255,250,240,.96);
+      --surface-strong: #fffdf7;
+      --green: #0b745e;
+      --navy: #17382f;
+      --orange: #be641f;
       --red: #a13b2b;
-      --shadow: 0 18px 48px rgba(31, 39, 32, .12);
+      --shadow: 0 16px 42px rgba(31, 39, 32, .10);
       --font: "Aptos", "Segoe UI", sans-serif;
     }
     * { box-sizing: border-box; }
     body {
       margin: 0;
       color: var(--ink);
-      background: linear-gradient(135deg, rgba(12,118,95,.14), transparent 34%), linear-gradient(180deg, #fffaf0, var(--bg));
+      background:
+        radial-gradient(circle at 12% 0%, rgba(11,116,94,.14), transparent 30%),
+        linear-gradient(180deg, #fffaf0 0%, var(--bg) 60%);
       font-family: var(--font);
+      line-height: 1.45;
     }
     main { max-width: 1220px; margin: 0 auto; padding: 28px 18px 46px; }
     .hero, .panel, .decision-card {
-      background: rgba(255,250,240,.94);
+      background: var(--surface);
       border: 1px solid var(--line);
-      border-radius: 8px;
+      border-radius: 14px;
       box-shadow: var(--shadow);
     }
-    .hero { display: grid; grid-template-columns: 1.25fr .75fr; gap: 18px; padding: 24px; margin-bottom: 18px; }
-    .eyebrow { margin: 0 0 8px; color: var(--green); font-size: .76rem; font-weight: 800; text-transform: uppercase; letter-spacing: .06em; }
+    .hero { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(280px, .8fr); gap: 18px; padding: 26px; margin-bottom: 18px; }
+    .eyebrow { margin: 0 0 8px; color: var(--green); font-size: .74rem; font-weight: 850; text-transform: uppercase; letter-spacing: .08em; }
     h1, h2, h3, p { margin: 0; }
-    h1 { font-size: clamp(2rem, 5vw, 4rem); line-height: .98; max-width: 760px; }
-    h2 { font-size: 1.12rem; margin-bottom: 14px; }
-    h3 { font-size: 1rem; }
+    h1 { font-size: clamp(2.25rem, 5vw, 4.35rem); line-height: .95; max-width: 780px; letter-spacing: -.045em; }
+    h2 { font-size: 1.08rem; margin-bottom: 14px; letter-spacing: -.015em; }
+    h3 { font-size: 1rem; line-height: 1.25; }
     .muted { color: var(--muted); }
     .hero-copy { margin-top: 16px; color: #3c473f; font-size: 1.05rem; max-width: 760px; }
-    .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 22px; }
-    .stat { border-top: 1px solid var(--line); padding-top: 12px; }
-    .stat strong { display: block; margin-top: 4px; font-size: 1.35rem; }
+    .stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin-top: 22px; }
+    .stat { background: var(--surface-strong); border: 1px solid rgba(23,32,28,.1); border-radius: 12px; padding: 12px; min-width: 0; }
+    .stat strong { display: block; margin-top: 4px; font-size: clamp(1.25rem, 2.5vw, 1.75rem); line-height: 1.1; overflow-wrap: anywhere; }
+    .stat .muted { display: block; font-size: .82rem; }
     .side { display: grid; align-content: start; gap: 14px; }
-    .side-block { border-left: 3px solid rgba(12,118,95,.24); padding-left: 14px; }
-    .layout { display: grid; grid-template-columns: .92fr 1.08fr; gap: 18px; margin-bottom: 18px; }
+    .side-block { background: rgba(255,253,247,.64); border: 1px solid rgba(23,32,28,.08); border-left: 4px solid rgba(11,116,94,.34); border-radius: 12px; padding: 14px; }
+    .layout { display: grid; grid-template-columns: minmax(0, .92fr) minmax(0, 1.08fr); gap: 18px; margin-bottom: 18px; }
     .panel { padding: 20px; }
     .decision-grid { display: grid; gap: 12px; }
     .decision-card { box-shadow: none; padding: 16px; }
-    .decision-card.move { border-color: rgba(12,118,95,.5); background: rgba(232,248,241,.88); }
-    .decision-card.hold { border-color: rgba(21,55,47,.28); }
+    .decision-card h3 { margin-bottom: 6px; }
+    .decision-card.move { border-color: rgba(11,116,94,.45); background: linear-gradient(180deg, rgba(232,248,241,.95), rgba(245,252,248,.95)); }
+    .decision-card.hold { border-color: rgba(21,55,47,.26); background: rgba(255,253,247,.82); }
     .decision-card.warn { border-color: rgba(194,98,26,.45); background: rgba(255,244,229,.9); }
     table { width: 100%; border-collapse: collapse; font-size: .93rem; }
-    th, td { text-align: left; border-bottom: 1px solid rgba(24,35,31,.1); padding: 10px 0; vertical-align: top; }
-    th { color: var(--muted); font-size: .8rem; }
-    .badge, .pill { display: inline-block; border-radius: 4px; padding: 2px 6px; font-size: .72rem; font-weight: 800; }
+    th, td { text-align: left; border-bottom: 1px solid rgba(24,35,31,.1); padding: 11px 10px; vertical-align: top; }
+    th { color: var(--muted); font-size: .76rem; text-transform: uppercase; letter-spacing: .05em; background: rgba(23,32,28,.035); }
+    tbody tr:nth-child(even) { background: rgba(255,253,247,.5); }
+    tbody tr:hover { background: rgba(11,116,94,.055); }
+    .badge, .pill, .status-chip { display: inline-block; border-radius: 999px; padding: 2px 8px; font-size: .72rem; font-weight: 800; white-space: nowrap; }
     .badge { margin-left: 5px; color: var(--green); border: 1px solid rgba(12,118,95,.24); background: rgba(12,118,95,.09); }
     .move-pill { color: #fff; background: var(--green); }
     .hold-pill { color: var(--navy); background: rgba(21,55,47,.1); }
+    .status-chip.status-unlocked { color: #075c49; background: rgba(11,116,94,.12); border: 1px solid rgba(11,116,94,.18); }
+    .status-chip.status-complete { color: #575048; background: rgba(104,116,108,.14); border: 1px solid rgba(104,116,108,.18); }
+    .status-chip.status-live { color: #8a3d00; background: rgba(190,100,31,.14); border: 1px solid rgba(190,100,31,.24); }
+    .status-chip.status-unknown { color: var(--muted); background: rgba(104,116,108,.08); border: 1px solid rgba(104,116,108,.14); }
     .player-meta { margin-top: 4px; display: flex; align-items: center; gap: 6px; font-size: .82rem; }
     .flag-icon { width: 15px; height: 10px; object-fit: cover; border-radius: 2px; }
-    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-bottom: 18px; }
+    .two-col { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 18px; margin-bottom: 18px; }
+    .table-scroll { overflow-x: auto; border: 1px solid rgba(24,35,31,.08); border-radius: 12px; }
+    .table-scroll table { min-width: 680px; }
+    .squad-table tbody tr.bench-row { opacity: .82; }
+    .squad-table tbody tr.status-unlocked td:first-child { box-shadow: inset 4px 0 0 rgba(11,116,94,.34); }
+    .squad-table tbody tr.status-live td:first-child { box-shadow: inset 4px 0 0 rgba(190,100,31,.38); }
     @media (max-width: 900px) {
       .hero, .layout, .two-col { grid-template-columns: 1fr; }
       .stats { grid-template-columns: 1fr; }
       .hero { padding: 18px; }
+      main { padding: 16px 12px 32px; }
+      .panel { padding: 16px; }
     }
   </style>
 </head>
@@ -96,7 +116,7 @@
         </div>
         <div class="side-block">
           <p class="eyebrow">Freshness</p>
-          <p class="muted">FIFA sync <span class="relative-time" data-timestamp="2026-06-26T18:04:05.885Z" data-mode="past" title="Jun 26, 2026, 2:04:05 PM EDT">just now</span> · state <span class="relative-time" data-timestamp="2026-06-26T18:04:05.885Z" data-mode="past" title="Jun 26, 2026, 2:04:05 PM EDT">just now</span></p>
+          <p class="muted">FIFA sync <span class="relative-time" data-timestamp="2026-06-26T18:11:08.293Z" data-mode="past" title="Jun 26, 2026, 2:11:08 PM EDT">just now</span> · state <span class="relative-time" data-timestamp="2026-06-26T18:11:08.293Z" data-mode="past" title="Jun 26, 2026, 2:11:08 PM EDT">just now</span></p>
         </div>
       </aside>
     </section>
@@ -112,9 +132,10 @@
           <h3>Keep Vinícius Júnior</h3>
           <p>Vinícius Júnior has 30 effective points. Best unlocked captain target is Kevin De Bruyne, projected 14.42 effective points, which is not enough edge to force a switch.</p>
         </article>
-        <table style="margin-top:12px">
-          <thead><tr><th>Rank</th><th>Player</th><th>Fixture</th><th>xPts</th></tr></thead>
-          <tbody>
+        <div class="table-scroll" style="margin-top:12px">
+          <table>
+            <thead><tr><th>Rank</th><th>Player</th><th>Fixture</th><th>xPts</th></tr></thead>
+            <tbody>
     <tr>
       <td><strong>Best</strong></td>
       <td>Kevin De Bruyne<div class="muted">M · BEL</div></td>
@@ -150,168 +171,175 @@
       <td>3.63</td>
     </tr>
   </tbody>
-        </table>
+          </table>
+        </div>
       </div>
     </section>
 
     <section class="two-col">
       <div class="panel">
         <h2>Manual substitution checks</h2>
-        <table>
-          <thead><tr><th>Starter out</th><th>Bench in</th><th>xPts</th><th>Gain</th><th>Call</th></tr></thead>
-          <tbody><tr><td colspan="5" class="muted">No completed starter currently has an eligible unlocked bench replacement.</td></tr></tbody>
-        </table>
+        <div class="table-scroll">
+          <table>
+            <thead><tr><th>Starter out</th><th>Bench in</th><th>xPts</th><th>Gain</th><th>Call</th></tr></thead>
+            <tbody><tr><td colspan="5" class="muted">No completed starter currently has an eligible unlocked bench replacement.</td></tr></tbody>
+          </table>
+        </div>
       </div>
       <div class="panel">
         <h2>Locked bench points</h2>
-        <table>
-          <thead><tr><th>Bench player</th><th>Status</th><th>Points</th><th>Fixture</th></tr></thead>
-          <tbody><tr><td>Lee Kang-In</td><td>Complete</td><td>2</td><td>KOR vs RSA · 0-1</td></tr><tr><td>Noussair Mazraoui</td><td>Complete</td><td>1</td><td>MAR vs HAI · 4-2</td></tr><tr><td>Yassine Bounou</td><td>Complete</td><td>-1</td><td>MAR vs HAI · 4-2</td></tr></tbody>
-        </table>
+        <div class="table-scroll">
+          <table>
+            <thead><tr><th>Bench player</th><th>Status</th><th>Points</th><th>Fixture</th></tr></thead>
+            <tbody><tr><td>Lee Kang-In</td><td><span class="status-chip status-complete">Complete</span></td><td>2</td><td>KOR vs RSA · 0-1</td></tr><tr><td>Noussair Mazraoui</td><td><span class="status-chip status-complete">Complete</span></td><td>1</td><td>MAR vs HAI · 4-2</td></tr><tr><td>Yassine Bounou</td><td><span class="status-chip status-complete">Complete</span></td><td>-1</td><td>MAR vs HAI · 4-2</td></tr></tbody>
+          </table>
+        </div>
       </div>
     </section>
 
     <section class="panel">
       <h2>Current squad</h2>
-      <table>
-        <thead><tr><th>Player</th><th>Pos</th><th>Status</th><th>Round pts</th><th>xPts left</th><th>Fixture</th></tr></thead>
-        <tbody>
-      <tr>
+      <div class="table-scroll">
+        <table class="squad-table">
+          <thead><tr><th>Player</th><th>Pos</th><th>Status</th><th>Round pts</th><th>xPts left</th><th>Fixture</th></tr></thead>
+          <tbody>
+      <tr class="lineup-row status-complete">
         <td>Yahia Fofana <div class="muted player-meta"><img class="flag-icon" src="https://flagcdn.com/w20/ci.png" alt="">Côte d&#39;Ivoire</div></td>
         <td>G</td>
-        <td>Complete</td>
+        <td><span class="status-chip status-complete">Complete</span></td>
         <td>7</td>
         <td>4.30</td>
         <td>CIV vs CUW · 2-0</td>
       </tr>
     
-      <tr>
+      <tr class="lineup-row status-unlocked">
         <td>Maxim De Cuyper <div class="muted player-meta"><img class="flag-icon" src="https://flagcdn.com/w20/be.png" alt="">Belgium</div></td>
         <td>D</td>
-        <td>Unlocked</td>
+        <td><span class="status-chip status-unlocked">Unlocked</span></td>
         <td>-</td>
         <td>3.63</td>
         <td>BEL vs NZL<br><span class="muted">Fri, Jun 26, 11:00 PM</span></td>
       </tr>
     
-      <tr>
+      <tr class="lineup-row status-complete">
         <td>Denzel Dumfries <div class="muted player-meta"><img class="flag-icon" src="https://flagcdn.com/w20/nl.png" alt="">Netherlands</div></td>
         <td>D</td>
-        <td>Complete</td>
+        <td><span class="status-chip status-complete">Complete</span></td>
         <td>5</td>
         <td>6.26</td>
         <td>NED vs TUN · 3-1</td>
       </tr>
     
-      <tr>
+      <tr class="lineup-row status-complete">
         <td>Douglas Santos <div class="muted player-meta"><img class="flag-icon" src="https://flagcdn.com/w20/br.png" alt="">Brazil</div></td>
         <td>D</td>
-        <td>Complete</td>
+        <td><span class="status-chip status-complete">Complete</span></td>
         <td>9</td>
         <td>3.22</td>
         <td>BRA vs SCO · 3-0</td>
       </tr>
     
-      <tr>
+      <tr class="lineup-row status-unlocked">
         <td>Kevin De Bruyne <div class="muted player-meta"><img class="flag-icon" src="https://flagcdn.com/w20/be.png" alt="">Belgium</div></td>
         <td>M</td>
-        <td>Unlocked</td>
+        <td><span class="status-chip status-unlocked">Unlocked</span></td>
         <td>-</td>
         <td>7.21</td>
         <td>BEL vs NZL<br><span class="muted">Fri, Jun 26, 11:00 PM</span></td>
       </tr>
     
-      <tr>
+      <tr class="lineup-row status-complete">
         <td>Vinícius Júnior <span class="badge">C</span><div class="muted player-meta"><img class="flag-icon" src="https://flagcdn.com/w20/br.png" alt="">Brazil</div></td>
         <td>M</td>
-        <td>Complete</td>
+        <td><span class="status-chip status-complete">Complete</span></td>
         <td>30 (raw 15)</td>
         <td>5.13</td>
         <td>BRA vs SCO · 3-0</td>
       </tr>
     
-      <tr>
+      <tr class="lineup-row status-unlocked">
         <td>Jérémy Doku <div class="muted player-meta"><img class="flag-icon" src="https://flagcdn.com/w20/be.png" alt="">Belgium</div></td>
         <td>M</td>
-        <td>Unlocked</td>
+        <td><span class="status-chip status-unlocked">Unlocked</span></td>
         <td>-</td>
         <td>5.35</td>
         <td>BEL vs NZL<br><span class="muted">Fri, Jun 26, 11:00 PM</span></td>
       </tr>
     
-      <tr>
+      <tr class="lineup-row status-complete">
         <td>Brahim Díaz <div class="muted player-meta"><img class="flag-icon" src="https://flagcdn.com/w20/ma.png" alt="">Morocco</div></td>
         <td>M</td>
-        <td>Complete</td>
+        <td><span class="status-chip status-complete">Complete</span></td>
         <td>2</td>
         <td>6.63</td>
         <td>MAR vs HAI · 4-2</td>
       </tr>
     
-      <tr>
+      <tr class="lineup-row status-unlocked">
         <td>Harry Kane <div class="muted player-meta"><img class="flag-icon" src="https://flagcdn.com/w20/gb-eng.png" alt="">England</div></td>
         <td>F</td>
-        <td>Unlocked</td>
+        <td><span class="status-chip status-unlocked">Unlocked</span></td>
         <td>-</td>
         <td>6.57</td>
         <td>ENG vs PAN<br><span class="muted">Sat, Jun 27, 5:00 PM</span></td>
       </tr>
     
-      <tr>
+      <tr class="lineup-row status-unlocked">
         <td>Kylian Mbappé <div class="muted player-meta"><img class="flag-icon" src="https://flagcdn.com/w20/fr.png" alt="">France</div></td>
         <td>F</td>
-        <td>Unlocked</td>
+        <td><span class="status-chip status-unlocked">Unlocked</span></td>
         <td>-</td>
         <td>5.93</td>
         <td>FRA vs NOR<br><span class="muted">Fri, Jun 26, 3:00 PM</span></td>
       </tr>
     
-      <tr>
+      <tr class="lineup-row status-complete">
         <td>Cody Gakpo <span class="badge">VC</span><div class="muted player-meta"><img class="flag-icon" src="https://flagcdn.com/w20/nl.png" alt="">Netherlands</div></td>
         <td>F</td>
-        <td>Complete</td>
+        <td><span class="status-chip status-complete">Complete</span></td>
         <td>2</td>
         <td>6.73</td>
         <td>NED vs TUN · 3-1</td>
       </tr>
     
-      <tr>
+      <tr class="bench-row status-complete">
         <td>Yassine Bounou <span class="badge">Bench</span><div class="muted player-meta"><img class="flag-icon" src="https://flagcdn.com/w20/ma.png" alt="">Morocco</div></td>
         <td>G</td>
-        <td>Complete</td>
+        <td><span class="status-chip status-complete">Complete</span></td>
         <td>-1</td>
         <td>0.00</td>
         <td>MAR vs HAI · 4-2</td>
       </tr>
     
-      <tr>
+      <tr class="bench-row status-complete">
         <td>Ghislain Konan <span class="badge">Bench</span><div class="muted player-meta"><img class="flag-icon" src="https://flagcdn.com/w20/ci.png" alt="">Côte d&#39;Ivoire</div></td>
         <td>D</td>
-        <td>Complete</td>
+        <td><span class="status-chip status-complete">Complete</span></td>
         <td>-</td>
         <td>3.86</td>
         <td>CIV vs CUW · 2-0</td>
       </tr>
     
-      <tr>
+      <tr class="bench-row status-complete">
         <td>Lee Kang-In <span class="badge">Bench</span><div class="muted player-meta"><img class="flag-icon" src="https://flagcdn.com/w20/kr.png" alt="">Korea Republic</div></td>
         <td>M</td>
-        <td>Complete</td>
+        <td><span class="status-chip status-complete">Complete</span></td>
         <td>2</td>
         <td>0.00</td>
         <td>KOR vs RSA · 0-1</td>
       </tr>
     
-      <tr>
+      <tr class="bench-row status-complete">
         <td>Noussair Mazraoui <span class="badge">Bench</span><div class="muted player-meta"><img class="flag-icon" src="https://flagcdn.com/w20/ma.png" alt="">Morocco</div></td>
         <td>D</td>
-        <td>Complete</td>
+        <td><span class="status-chip status-complete">Complete</span></td>
         <td>1</td>
         <td>4.26</td>
         <td>MAR vs HAI · 4-2</td>
       </tr>
     </tbody>
-      </table>
+        </table>
+      </div>
       <p class="muted" style="margin-top:12px">Projection source: fantalens-players-rounds-1-2-3.json. Current-round points come from the FIFA fantasy feed.</p>
     </section>
   </main>
